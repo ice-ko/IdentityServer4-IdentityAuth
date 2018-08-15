@@ -213,7 +213,7 @@ namespace IdentityServer4.Quickstart.UI
                         //返回响应是为了为最终用户提供更好的用户体验。
                         return View("Redirect", new RedirectViewModel { RedirectUrl = model.ReturnUrl });
                     }
-                    return Redirect(model.ReturnUrl);
+                    return Redirect("http://localhost:5002/");
                 }
                 else
                 {
@@ -305,6 +305,11 @@ namespace IdentityServer4.Quickstart.UI
 
                 // 这会触发重定向到外部提供程序以进行注销
                 return SignOut(new AuthenticationProperties { RedirectUri = url }, vm.ExternalAuthenticationScheme);
+            }
+            //正常退出直接重定向 不使用系统退出流程
+            if (!string.IsNullOrEmpty(vm.PostLogoutRedirectUri))
+            {
+                return Redirect(vm.PostLogoutRedirectUri);
             }
 
             return View("LoggedOut", vm);

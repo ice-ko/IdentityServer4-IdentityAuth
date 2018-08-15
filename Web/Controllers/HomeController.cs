@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -20,14 +21,7 @@ namespace Web.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-            GetToken();
-            return View();
-        }
-
-        public async Task GetToken()
+        public async Task<IActionResult> About()
         {
             //获取用户信息
             var claimIdentity = (ClaimsIdentity)HttpContext.User.Identity;
@@ -43,6 +37,7 @@ namespace Web.Controllers
             {
                 Console.WriteLine(response.StatusCode);
             }
+            return View();
         }
 
         public IActionResult Contact()
