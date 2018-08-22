@@ -311,8 +311,11 @@ namespace IdentityServer4.Quickstart.UI
             {
                 return Redirect(vm.PostLogoutRedirectUri);
             }
-
-            return View("LoggedOut", vm);
+            else
+            {
+                return Redirect("/home/index");
+            }
+            // return View("LoggedOut", vm);
         }
 
 

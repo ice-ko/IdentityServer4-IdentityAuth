@@ -35,25 +35,33 @@
                     </span>
                 </a>
             </div>
+            <ul class="nav navbar-nav">
+                @if (string.IsNullOrWhiteSpace(name))
+                {
+                    <li>
+                        <a href="/wechat/index">微信登录</a>
+                    </li>
+                    <li>
+                        <a href="/account/login">用户登录</a>
+                    </li>
+                }
+                @if (!string.IsNullOrWhiteSpace(name))
+                {
 
-            @if (!string.IsNullOrWhiteSpace(name))
-            {
-                <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">@name <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
                         </ul>
                     </li>
-                </ul>
-            }
+
+                }
+            </ul>
         </div>
     </div>
-
     <div class="container body-content">
         @RenderBody()
     </div>
-
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     @RenderSection("scripts", required: false)

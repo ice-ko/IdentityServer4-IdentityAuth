@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using QQ;
 
 namespace IdentityServer
 {
@@ -24,6 +25,12 @@ namespace IdentityServer
                 .AddInMemoryClients(Config.GetClients())//添加客户端
                 .AddResourceOwnerValidator<LoginValidator>()//用户校验
                 .AddProfileService<ProfileService>();
+            //QQ登录
+            //services.AddAuthentication().AddQQ(qqOptions =>
+            //{
+            //    qqOptions.AppId = "";
+            //    qqOptions.AppKey = "";
+            //});
             //注册mvc服务
             services.AddMvc();
         }
