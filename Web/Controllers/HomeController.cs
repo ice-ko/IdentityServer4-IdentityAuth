@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Newtonsoft.Json.Linq;
 using Web.Models;
 
 namespace Web.Controllers
@@ -30,6 +31,7 @@ namespace Web.Controllers
             var token = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
             //实例化HttpClient
             var client = new HttpClient();
+            //设置token
             client.SetBearerToken(token);
             //请求identity接口
             var response = await client.GetAsync("http://localhost:5001/identity");
@@ -37,7 +39,8 @@ namespace Web.Controllers
             {
                 Console.WriteLine(response.StatusCode);
             }
-            return View();
+            var content = await response.Content.ReadAsStringAsync();
+            return View(JArray.Parse(content));
         }
 
         public IActionResult Contact()

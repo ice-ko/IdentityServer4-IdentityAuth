@@ -77,6 +77,10 @@ namespace Components.Tools
         /// 新浪授权成功后的回调地址
         /// </summary>
         static public string SinaCallbackUrl = ConfigurationAppSetting.AppSettings["SinaCallbackUrl"];
+        /// <summary>
+        /// QQ登录授权成功回调地址
+        /// </summary>
+        static public string QQLoginCallbackUrl = ConfigurationAppSetting.AppSettings["QQLoginCallbackUrl"];
     }
 
 

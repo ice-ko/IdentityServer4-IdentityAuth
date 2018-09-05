@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{49F523A1-EF82-4120-BA87-6587F360D7BD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{6CBFF827-A60C-48E9-A593-BDCAA8585B2B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{A172D32B-9D30-4DC4-BAB5-3D7D3DAD56B2}"
@@ -17,11 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Sugar", "Compone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{C4ECB8F4-E544-43E8-87D5-FA3F9963462F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthenticationExtensions", "AuthenticationExtensions", "{D88E0BDA-F1F5-4AA9-A92C-A0E1E723E856}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQ", "AuthenticationExtensions\QQ\QQ.csproj", "{487DF4DC-F30B-420D-952F-DB62922B5A87}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChat", "AuthenticationExtensions\WeChat\WeChat.csproj", "{EF18C127-A892-4581-873E-AE5A3719F53B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer", "AuthServer\AuthServer.csproj", "{6F5B9CD9-8558-4D19-9A6E-F4C4C25210E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{49F523A1-EF82-4120-BA87-6587F360D7BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49F523A1-EF82-4120-BA87-6587F360D7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49F523A1-EF82-4120-BA87-6587F360D7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49F523A1-EF82-4120-BA87-6587F360D7BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CBFF827-A60C-48E9-A593-BDCAA8585B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CBFF827-A60C-48E9-A593-BDCAA8585B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBFF827-A60C-48E9-A593-BDCAA8585B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,14 +43,10 @@ Global
 		{C4ECB8F4-E544-43E8-87D5-FA3F9963462F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4ECB8F4-E544-43E8-87D5-FA3F9963462F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4ECB8F4-E544-43E8-87D5-FA3F9963462F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{487DF4DC-F30B-420D-952F-DB62922B5A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{487DF4DC-F30B-420D-952F-DB62922B5A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{487DF4DC-F30B-420D-952F-DB62922B5A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{487DF4DC-F30B-420D-952F-DB62922B5A87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF18C127-A892-4581-873E-AE5A3719F53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF18C127-A892-4581-873E-AE5A3719F53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF18C127-A892-4581-873E-AE5A3719F53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF18C127-A892-4581-873E-AE5A3719F53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5B9CD9-8558-4D19-9A6E-F4C4C25210E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5B9CD9-8558-4D19-9A6E-F4C4C25210E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5B9CD9-8558-4D19-9A6E-F4C4C25210E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5B9CD9-8558-4D19-9A6E-F4C4C25210E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,8 +55,6 @@ Global
 		{ED2EFB8F-4051-4282-A535-17593EE7D6B6} = {A172D32B-9D30-4DC4-BAB5-3D7D3DAD56B2}
 		{754271B7-FBC0-4674-9174-980E963A01DB} = {A172D32B-9D30-4DC4-BAB5-3D7D3DAD56B2}
 		{69E93F33-FC8A-4C55-A9FA-E0F8555A8775} = {A172D32B-9D30-4DC4-BAB5-3D7D3DAD56B2}
-		{487DF4DC-F30B-420D-952F-DB62922B5A87} = {D88E0BDA-F1F5-4AA9-A92C-A0E1E723E856}
-		{EF18C127-A892-4581-873E-AE5A3719F53B} = {D88E0BDA-F1F5-4AA9-A92C-A0E1E723E856}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C723F7C-FB0C-41CD-8382-B37250AA988C}
